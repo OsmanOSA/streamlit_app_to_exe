@@ -27,7 +27,7 @@ FILE_PATH = resource_path("datasets/data.csv")
 def read_data():
     data = pd.read_csv(FILE_PATH, sep=None, engine="python", 
                         parse_dates=["timestamp"], index_col="timestamp")
-    st.success("Données chargée !")
+    st.success("Données chargées !")
     return data 
 
 def vue_ensemble():
