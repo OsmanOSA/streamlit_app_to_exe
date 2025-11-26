@@ -32,7 +32,7 @@ def read_data():
 
 def vue_ensemble():
 
-    st.markdown(f"<h1 class='main-title'> Surveillance de la performance énergétique</h1>", unsafe_allow_html=True)
+    st.markdown(f"<h1 class='main-title'>Surveillance de la performance énergétique</h1>", unsafe_allow_html=True)
 
     data = read_data()
 
