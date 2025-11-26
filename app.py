@@ -2,7 +2,6 @@ import warnings
 import streamlit as st
 
 from frontend.vue_ensemble_page import vue_ensemble
-from frontend.accueil_page import Home
 from pathlib import Path
 from backend.session_config import SessionConfig
 

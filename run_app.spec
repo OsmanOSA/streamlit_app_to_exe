@@ -7,7 +7,9 @@ datas = [('D:/streamlit_app_to_exe/.venv/Lib/site-packages/streamlit/static', 's
          ('D:/streamlit_app_to_exe/.venv/Lib/site-packages/streamlit/runtime', 'streamlit/runtime'),
          ("D:/streamlit_app_to_exe/.venv/Lib/site-packages/altair/vegalite/v5/schema/vega-lite-schema.json",
          "./altair/vegalite/v5/schema/"), 
-         ('D:/streamlit_app_to_exe/.streamlit', '.streamlit')]
+         ('D:/streamlit_app_to_exe/.streamlit', '.streamlit'), 
+         ('backend', 'backend'), ('frontend', 'frontend'), 
+         ('datasets', 'datasets')]
 
 datas += copy_metadata('streamlit')
 

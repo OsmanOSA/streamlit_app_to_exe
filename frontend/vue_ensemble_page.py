@@ -1,4 +1,5 @@
 import os
+import sys
 import pandas as pd
 import numpy as np
 import streamlit as st
@@ -8,14 +9,23 @@ import plotly.graph_objects as go
 from pathlib import Path
 from backend.session_config import create_text_input
 
-CURRENT = Path(__file__).resolve()
-ROOT = CURRENT.parent.parent      # remonte de "frontend" → racine
-FILE_PATH = ROOT / "datasets" / "data.csv"
+def resource_path(relative_path):
+    """Compatible .py normal et .exe PyInstaller."""
+    # Mode PyInstaller
+    if hasattr(sys, '_MEIPASS'):
+        return Path(sys._MEIPASS) / relative_path
+    
+    # Mode normal → reprendre ton comportement EXACT
+    CURRENT = Path(__file__).resolve()
+    ROOT = CURRENT.parent.parent
+    
+    return ROOT / relative_path
 
+FILE_PATH = resource_path("datasets/data.csv")
 
 @st.cache_data
 def read_data():
-    data = pd.read_csv(os.path.join(FILE_PATH), sep=None, engine="python", 
+    data = pd.read_csv(FILE_PATH, sep=None, engine="python", 
                         parse_dates=["timestamp"], index_col="timestamp")
     st.success("Données chargée !")
     return data 
